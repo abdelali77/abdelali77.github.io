@@ -8,7 +8,7 @@
 **Difficulty:** Medium  
 **Category:** Linux / Web  
 
-# Scenario
+## Scenario
 Green Lights, Dark Corners
 CorpNet's internal network operations centre has been running quietly for years. Monitoring hosts, logging events, and keeping the infrastructure alive. Or so it seems. A tip from a disgruntled contractor suggests that someone on the NOC team has been cutting corners, leaving doors open, and hiding things in places no one thinks to look.
 
@@ -18,7 +18,7 @@ But clean logs can be written by anyone.
 
 Your job is to get in, move through the system, and find out what is really running behind the secret dashboard.
 
-# Reconnaissance
+## Reconnaissance
 We start by enumerating the target machine using Nmap to identify open ports and services. The Nmap scan reveals the following:
 
 ```bash
@@ -45,14 +45,14 @@ gobuster dir -u http://silent-monitor.thm:5050/ -w /usr/share/wordlists/dirbuste
 
 ![login](https://i.postimg.cc/wxPQcGkD/Screenshot-From-2026-08-19-23-29-07.png)
 
-# Access as netops
+## Access as netops
 I try some sqli injection payloads on the username, the payload **' OR 1==1--** works and now i'm logged in as the user `netops`. After logging in, I can see a dashboard.
 
 ![dashboard](https://i.postimg.cc/yYZXfyfm/Screenshot-From-2026-08-19-23-37-48.png)
 
 In the dashboard, We can see a `audit logs` sections, i can see that an other user tried to get access via command injection on the `/health` endpoint. So i try to get access via command injection on the same endpoint.
 
-# Shell as www-data
+## Shell as www-data
 We move to the `/health` endpoint and try to inject a command.
 ![health](https://i.postimg.cc/W30qG5pG/Screenshot-From-2026-08-19-23-47-02.png)
 
@@ -69,7 +69,7 @@ after executing the payload, we get a reverse shell as the user `www-data`.
 
 ![reverse_shell](https://i.postimg.cc/sxwYWTKZ/Screenshot-From-2026-08-19-23-58-32.png)
 
-# Shell as sysadmin
+## Shell as sysadmin
 In the directory `/opt/netops`, we can see a file called `secret.config`, which has the credentials for the user `sysadmin`. We can use these credentials to SSH into the machine as `sysadmin`.
 
 ![secret.config](https://i.postimg.cc/W37W96XT/Screenshot-From-2026-08-20-00-06-24.png)
@@ -80,7 +80,7 @@ ssh sysadmin@silent-monitor.thm
 
 ![sysadmin](https://i.postimg.cc/PxfzqGQx/Screenshot-From-2026-08-20-00-17-32.png)
 
-# Shell as root
+## Shell as root
 In the `backup` directory, we can see keepass files, we can use the `keepass2john` tool to extract the hash from the keepass file and then use `john` to crack the hash and get the password for the user `root`.
 
 ![keepass](https://i.postimg.cc/fRhdLnMB/Screenshot-From-2026-08-20-00-19-16.png)
