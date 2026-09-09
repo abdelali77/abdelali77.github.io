@@ -1,0 +1,57 @@
+---
+---
+
+@use 'abstracts/variables' with (
+  $theme: '{{ site.theme_mode }}'
+);
+
+/* prettier-ignore */
+@use 'main
+{%- if jekyll.environment == 'production' -%}
+  .bundle
+{%- endif -%}
+';
+
+/* append your custom style below */
+
+/* Custom font overrides */
+.post-title,
+.page-title,
+h1, h2, h3, h4, h5, h6,
+.site-title,
+.nav-link {
+  font-family: 'IBM Plex Sans', sans-serif;
+}
+
+:root[data-bs-theme="dark"] {
+  /* Backgrounds — pushed toward near-black */
+  --main-bg: rgb(10 10 12);
+  --mask-bg: rgb(50 51 52);
+  --main-border-color: rgb(35 36 36);
+
+  --sidebar-bg: #121212;
+  --sidebar-border-color: #1a1a1a;
+  --sidebar-hover-bg: #1c1c1c;
+  --sidebar-btn-bg: #17171a;
+
+  --topbar-bg: rgb(10 10 12 / 70%);
+
+  --menu-bg: rgb(15 15 15);
+  --menu-border-color: rgb(60 60 60 / 60%);
+
+  --card-bg: #141414;
+  --card-header-bg: #1a1a1a;
+
+  --button-bg: #131313;
+  --btn-border-color: #232323;
+
+  --highlight-bg-color: #0d0d0d;
+  --kbd-bg-color: #1a1a1a;
+
+  --tb-odd-bg: #161616;
+  --tb-even-bg: #101010;
+
+  --search-tag-bg: #1a1a1a;
+
+  --img-bg: radial-gradient(circle, rgb(8 8 10) 0%, rgb(16 16 16) 100%);
+}
