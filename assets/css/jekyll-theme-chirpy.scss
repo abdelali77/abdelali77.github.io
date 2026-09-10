@@ -54,4 +54,24 @@ h1, h2, h3, h4, h5, h6,
   --search-tag-bg: #1a1a1a;
 
   --img-bg: radial-gradient(circle, rgb(8 8 10) 0%, rgb(16 16 16) 100%);
+	--toc-highlight: rgb(226 3 56);
+}
+
+a:hover {
+  color: #E20338 !important;
+}
+
+#page-category a:hover,
+#page-tag a:hover,
+#access-lastmod a:hover,
+.post-tail-wrapper .license-wrapper > a:hover,
+.post-edit > a:hover,
+#search-results a:hover,
+footer a:hover,
+#topbar a:hover,
+#breadcrumb a:hover,
+.post-meta a:not([class]):hover,
+.content a:not(.img-link):hover {
+  color: #E20338 !important;
+  border-bottom: 1px solid #E20338 !important;
 }
