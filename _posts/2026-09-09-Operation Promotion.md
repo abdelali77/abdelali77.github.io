@@ -71,7 +71,7 @@ The ping command is executed on the server, and we can see that the output is di
 
 ![Command Injection](https://i.postimg.cc/SRhRMP4B/Screenshot-From-2026-09-09-14-41-05.png)
 
-## Access as www-data
+## Shell as www-data
 
 So, we can now gain a reverse shell by using the command injection vulnerability. I will use the following command to get a reverse shell:
 
@@ -87,7 +87,7 @@ Moving around, I check the `config` folder and found a file called `db.conf`. Th
 
 ![db.conf](https://i.postimg.cc/SKfKCrTF/Screenshot-From-2026-09-09-16-04-09.png)
 
-## Access as jford
+## Shell as jford
 Unfortunately, i cannot crack the **db_pass_hash**, so i get back to the index page and try find some clues that can help wit the password.
 
 ![index](https://i.postimg.cc/XqjBrvwN/Screenshot-From-2026-09-09-16-20-58.png)
@@ -108,7 +108,7 @@ We successfully get a hit! Now we are able to SSH into the target machine as the
 
 ![ssh](https://i.postimg.cc/XN1YfxWH/Screenshot-From-2026-09-09-16-36-54.png)
 
-## Access as root
+## Shell as root
 Now that we are logged in as `jford`, we need to escalate our privileges to root. I check the classic `sudo -l` command to see if the user has any sudo privileges.
 
 ![sudo](https://i.postimg.cc/CLtCQjGh/Screenshot-From-2026-09-09-16-41-48.png)
