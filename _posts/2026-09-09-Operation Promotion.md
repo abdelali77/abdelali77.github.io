@@ -1,3 +1,10 @@
+---
+title: Operation Promotion
+date: 2026-09-09 12:00:00 +0000
+categories: [TryHackMe]
+tags: [linux, writeup]
+image: https://cdn-images.tryhackme.com/room-icons/645b19f5d5848d004ab9c9e2-1779217862269
+---
 <div style="display: flex; align-items: center; gap: 1rem;">
 	<img src="https://cdn-images.tryhackme.com/room-icons/645b19f5d5848d004ab9c9e2-1779217862269" alt="Silent Monitor" width="100" height="100">
 	<h1>Operation Promotion — Write-up</h1>

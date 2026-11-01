@@ -1,3 +1,10 @@
+---
+title: Silent Monitor
+date: 2026-08-19 12:00:00 +0000
+categories: [TryHackMe]
+tags: [linux, web, writeup]
+image: https://cdn-images.tryhackme.com/room-icons/69d514a8a643762d5700ec6f-1779219421762
+---
 <div style="display: flex; align-items: center; gap: 1rem;">
 	<img src="https://cdn-images.tryhackme.com/room-icons/69d514a8a643762d5700ec6f-1779219421762" alt="Silent Monitor" width="100" height="100">
 	<h1>Silent Monitor — Write-up</h1>
