@@ -6,7 +6,7 @@ tags: [linux, writeup]
 image: https://cdn-images.tryhackme.com/room-icons/645b19f5d5848d004ab9c9e2-1779217928574
 ---
 <div style="display: flex; align-items: center; gap: 1rem;">
-	<img src="https://cdn-images.tryhackme.com/room-icons/645b19f5d5848d004ab9c9e2-1779217928574" alt="Silent Monitor" width="100" height="100">
+	<img src="https://cdn-images.tryhackme.com/room-icons/645b19f5d5848d004ab9c9e2-1779217928574" alt="Operation Coldstart" width="100" height="100">
 	<h1>Operation Coldstart — Write-up</h1>
 </div>
 <br>
